@@ -2,7 +2,7 @@
  * @Author: 伟强
  * @Date:   2016-05-27 10:02:24
  * @Last Modified by:   伟强
- * @Last Modified time: 2016-07-17 19:18:56
+ * @Last Modified time: 2016-07-17 20:18:32
  */
 
 'use strict';
@@ -121,11 +121,12 @@ $(function() {
   $('#showDay').html('当前日期:' + d.toLocaleDateString());
   var nowDate = d.toLocaleDateString();
   /*摘要字段*/
-  var abstractInput = UE.getEditor('abstract', {
-    toolbars: [],
-    initialFrameHeight: 100,
-    maximumWords: 100,
-  });
+  // var abstractInput = UE.getEditor('abstract', {
+  //   toolbars: [],
+  //   initialFrameHeight: 100,
+  //   maximumWords: 100,
+  // });
+  
   /*文章主体*/
   var ue = UE.getEditor('container', {
     toolbars: [['simpleupload']],
@@ -138,7 +139,8 @@ $(function() {
     maximumWords: 100,
   });
   $('#publicBtn').bind('click', function() {
-    var abstractData = abstractInput.getContent();
+    // var abstractData = abstractInput.getContent();
+    var abstractData = $('#textArea').val();
     var contentData = ue.getContent();
     var writerData = writerInfo.getContent();
     console.log('摘要' + abstractData + '\n内容:' + contentData + '\n作者信息:' + writerData);

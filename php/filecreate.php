@@ -1,18 +1,18 @@
 <?php
     	header("Content-type:text/html;charset=utf-8");
 
-        // $temp1 = '<!DOCTYPE html><html lang="zh-cn"><head><title>';
-        // $temp2 = '</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/></head><body><div class="main"><div class="header"><p>文章类型:';
-        // $temp9 = '<h3 class="pageTitle">';
-        // $temp3 = '</h3><p class="subTitle"><span class="nowDate">日期:';
-        // $temp4 = '</span><span class="writer">作者:';
-        // $temp5 = '</span></p><p>摘要:</p><p>';
-        // $temp6 = '</p></div><div class="content">';
-        // $temp7 = '</div><div class="footer" style="margin-top:10px;">';
-        // $temp8 = '</div></div></body></html>';
-        // $temp10 = '<div id="img"><img alt="封面缩略图" src="';
+        $temp1 = '<!DOCTYPE html><html lang="zh-cn"><head><title>';
+        $temp2 = '</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/></head><body><div class="main"><div class="header"><p>文章类型:';
+        $temp9 = '<h3 class="pageTitle">';
+        $temp3 = '</h3><p class="subTitle"><span class="nowDate">日期:';
+        $temp4 = '</span><span class="writer">作者:';
+        $temp5 = '</span></p><p>摘要:</p><p>';
+        $temp6 = '</p></div><div class="content">';
+        $temp7 = '</div><div class="footer" style="margin-top:10px;">';
+        $temp8 = '</div></div></body></html>';
+        $temp10 = '<div id="img"><img alt="封面缩略图" src="';
 
-        // $textType = $_POST['textType'];
+        $textType = $_POST['textType'];
         $data = '';
 
         if(isset($_POST['pageTitle'], 
