@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Access-Control-Allow-Origin" content="*"> -->
+    <!-- <script src="http://api.100steps.net/qiniu/index.php?data=api|qiniu|1310457552"></script> -->
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="moxie.js"></script>
+    <script type="text/javascript" src="plupload.dev.js"></script>
+    <script type="text/javascript" src="ueditor.config.js"></script>
+    <script type="text/javascript" src="ueditor.all.js"></script>
+    <script type="text/javascript" src="qiniu.js"></script>
+    <!-- <script type="text/javascript" src="js/hmac-sha1.js"></script> -->
+    <!-- <script type="text/javascript" src="js/qiniu-token.js"></script> -->
+
+    <script type="text/javascript" src="js/create_token.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script src="./lang/zh-cn/zh-cn.js"></script>
+    <title>bbt-editor</title>
+</head>
+
+<body>
+    <div class="main" id="main">
+        <div class="headBox" id="headBox">
+            <select name="" id="textType" class="textType">
+                <option value="dailySoup">每日一文</option>
+                <option value="schoolInformation">咨询文章</option>
+            </select>
+            <div class="picUpload" id="picUpload">
+                <div class="uploadDiv" id="uploadDiv"></div>
+                <button class="pickBtn" id="pickfiles">upload</button>
+                <div class="fsUploadProgress" id="fsUploadProgress"></div>
+                
+            </div>
+                
+
+            <label for="pageTitle">页面标题:</label>
+            <input type="text" id="pageTitle" placeholder="输入页面标题" value=""/>
+            <label for="writer">作者:</label>
+            <input type="text" id="writer" placeholder="输入作者" value="" />
+            <span class="showDay" id="showDay"></span>
+        </div>
+
+        <div class="abstractBox" id="abstractBox">
+            <script id="abstract" name="abstract" type="text/plain" >输入摘要字段</script>
+        </div>
+
+        <div class="editorBox" id="editorBox">
+            <script id="container" name="content" type="text/plain" ></script>
+        </div>
+
+        <div class="writerInfoBox" id="writerInfoBox">
+            <script id="writerInfoContainer" name="writerInfo" type="text/plain" >在此处输入作者信息</script>
+        </div>
+
+        <button class="publicBtn" id="publicBtn">提交</button>
+
+    </div>
+
+</body>
+
+</html>
