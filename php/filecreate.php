@@ -26,7 +26,8 @@
           $_POST['writer'] != '' && 
           $_POST['nowDate'] != '' && 
           $_POST['content'] != '' && 
-          $_POST['writerData'] != ''){
+          $_POST['writerData'] != '' && 
+          $_POST['summary'] != ''){
 
           $pageTitle = $_POST['pageTitle'];
           $writer = $_POST['writer'];
@@ -45,7 +46,9 @@
                 echo '已存在此文章';
                 return;
             }
-            saveFile('http://218.192.166.167/api/protype/dailySoup/'.iconv('UTF-8', 'GBK', $pageTitle).'.html',$result);
+            // saveFile('http://218.192.166.167/api/protype/dailySoup/'.iconv('UTF-8', 'GBK', $pageTitle).'.html',$result);
+            
+            
 
             $data = '{"date":"'.$nowDate.'","title":"'.$pageTitle.'","author":"'.$writer.'","article":"'.$content.'","summary":"'.$summary.'","authorIntroduce":"'.$writerData.'"}';
 
@@ -66,15 +69,24 @@
                 echo '已存在此文章';
                 return;
             }
-            saveFile('http://218.192.166.167/api/protype/schoolInformation/'.iconv('UTF-8', 'GBK', $pageTitle).'.html',$result);
+            // saveFile('http://218.192.166.167/api/protype/schoolInformation/'.iconv('UTF-8', 'GBK', $pageTitle).'.html',$result);
 
           $data = '{"date":"'.$nowDate.'","title":"'.$pageTitle.'","author":"'.$writer.'","article":"'.$content.'","summary":"'.$summary.'","picture":"'.$picture.'"}';
           }
 
-          $url = 'http://218.192.166.167/api/protype.php?table='.$textType.'&method=save&data='.$data;
+          // echo 'data是'.$data;
+
+          $searchStr = array('.jpg\" title=\"', '.png\" title=\"', '.jpeg\" title=\"', '.gif\" title=\"', '.bmp\" title=\"');
+          $replaceStr = array('.jpg?imageView2/0/w/200\" title=\"', '.png?imageView2/0/w/200\" title=\"', '.jpeg?imageView2/0/w/200\" title=\"', '.gif?imageView2/0/w/200\" title=\"', '.bmp?imageView2/0/w/200\" title=\"');
+
+          $dataAfter = str_replace($searchStr, $replaceStr, $data);
+          // echo 'dataAfter是'.$dataAfter;
+
+
+          $url = 'http://218.192.166.167/api/protype.php?table='.$textType.'&method=save&data='.$dataAfter;
           $json = file_get_contents($url);
-          echo $json;
-          // echo '已存';
+          // echo $json;
+          echo '已存';
 
         }else{
             echo '填写不全';

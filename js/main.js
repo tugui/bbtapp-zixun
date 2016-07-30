@@ -2,7 +2,7 @@
  * @Author: 伟强
  * @Date:   2016-05-27 10:02:24
  * @Last Modified by:   伟强
- * @Last Modified time: 2016-07-17 20:18:32
+ * @Last Modified time: 2016-07-18 15:02:12
  */
 
 'use strict';
@@ -75,7 +75,7 @@ $(function() {
           retKey = res.key;
           console.log('http://' + domain + '/' + res.key);
           imgUrl = 'http://' + domain + '/' + res.key;
-          var showPic = imgUrl + '?imageView2/1/w/200/h/200';
+          var showPic = imgUrl + '?imageView2/0/w/200';
 
           $('#uploadDiv').append('<img src="' + showPic + '" alt="封面缩略图"/>');
 
