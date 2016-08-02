@@ -1,16 +1,16 @@
 <?php
     	header("Content-type:text/html;charset=utf-8");
 
-        $temp1 = '<!DOCTYPE html><html lang="zh-cn"><head><title>';
-        $temp2 = '</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/></head><body><div class="main"><div class="header"><p>文章类型:';
-        $temp9 = '<h3 class="pageTitle">';
-        $temp3 = '</h3><p class="subTitle"><span class="nowDate">日期:';
-        $temp4 = '</span><span class="writer">作者:';
-        $temp5 = '</span></p><p>摘要:</p><p>';
-        $temp6 = '</p></div><div class="content">';
-        $temp7 = '</div><div class="footer" style="margin-top:10px;">';
-        $temp8 = '</div></div></body></html>';
-        $temp10 = '<div id="img"><img alt="封面缩略图" src="';
+        // $temp1 = '<!DOCTYPE html><html lang="zh-cn"><head><title>';
+        // $temp2 = '</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1"/><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/></head><body><div class="main"><div class="header"><p>文章类型:';
+        // $temp9 = '<h3 class="pageTitle">';
+        // $temp3 = '</h3><p class="subTitle"><span class="nowDate">日期:';
+        // $temp4 = '</span><span class="writer">作者:';
+        // $temp5 = '</span></p><p>摘要:</p><p>';
+        // $temp6 = '</p></div><div class="content">';
+        // $temp7 = '</div><div class="footer" style="margin-top:10px;">';
+        // $temp8 = '</div></div></body></html>';
+        // $temp10 = '<div id="img"><img alt="封面缩略图" src="';
 
         $textType = $_POST['textType'];
         $data = '';
@@ -39,13 +39,13 @@
           $content = str_replace('"','\"',$content);
 
           if ($textType === "dailySoup") {
-            $article = 'http://218.192.166.167/api/protype/dailySoup/'.$pageTitle.'.html';
+            // $article = 'http://218.192.166.167/api/protype/dailySoup/'.$pageTitle.'.html';
 
-            $result = $temp1.$pageTitle.$temp2.'每日一文'.'</p>'.$temp9.$pageTitle.$temp3.$nowDate.$temp4.$writer.$temp5.$summary.$temp6.$content.$temp7.$writerData.$temp8;
-            if (file_exists('http://218.192.166.167/api/protype/dailySoup/'.iconv('UTF-8', 'GBK', $pageTitle).'.html')) {
-                echo '已存在此文章';
-                return;
-            }
+            // $result = $temp1.$pageTitle.$temp2.'每日一文'.'</p>'.$temp9.$pageTitle.$temp3.$nowDate.$temp4.$writer.$temp5.$summary.$temp6.$content.$temp7.$writerData.$temp8;
+            // if (file_exists('http://218.192.166.167/api/protype/dailySoup/'.iconv('UTF-8', 'GBK', $pageTitle).'.html')) {
+            //     echo '已存在此文章';
+            //     return;
+            // }
             // saveFile('http://218.192.166.167/api/protype/dailySoup/'.iconv('UTF-8', 'GBK', $pageTitle).'.html',$result);
             
             
@@ -62,9 +62,9 @@
               return;
             }
 
-            $article = 'http://218.192.166.167/api/protype/schoolInformation/'.$pageTitle.'.html';
+            // $article = 'http://218.192.166.167/api/protype/schoolInformation/'.$pageTitle.'.html';
 
-            $result = $temp1.$pageTitle.$temp2.'校内咨询'.'</p>'.$temp10.$picture.'"/>'.$temp9.$pageTitle.$temp3.$nowDate.$temp4.$writer.$temp5.$summary.$temp6.$content.$temp7.$writerData.$temp8;
+            // $result = $temp1.$pageTitle.$temp2.'校内咨询'.'</p>'.$temp10.$picture.'"/>'.$temp9.$pageTitle.$temp3.$nowDate.$temp4.$writer.$temp5.$summary.$temp6.$content.$temp7.$writerData.$temp8;
             if (file_exists('http://218.192.166.167/api/protype/schoolInformation/'.iconv('UTF-8', 'GBK', $pageTitle).'.html')) {
                 echo '已存在此文章';
                 return;
@@ -93,33 +93,33 @@
         }
         
         
-        function saveFile($fileName, $text) {
-         if (!$fileName || !$text){
-            return false;
-         }
-         if (makeDir(dirname($fileName))) {
-             if ($fp = fopen($fileName, "w")) {
-                 if (@fwrite($fp, $text)) {
-                     fclose($fp);
-                     return $fileName;
-                 } else {
-                     fclose($fp);
-                     return false;
-                 } 
-             } 
-         } 
-         return false;
-     } 
+        // function saveFile($fileName, $text) {
+        //  if (!$fileName || !$text){
+        //     return false;
+        //  }
+        //  if (makeDir(dirname($fileName))) {
+        //      if ($fp = fopen($fileName, "w")) {
+        //          if (@fwrite($fp, $text)) {
+        //              fclose($fp);
+        //              return $fileName;
+        //          } else {
+        //              fclose($fp);
+        //              return false;
+        //          } 
+        //      } 
+        //  } 
+        //  return false;
+        // } 
      
-     function makeDir($dir) {
-         $mode = "0777";
-         if (!$dir){return false;}
+     // function makeDir($dir) {
+     //     $mode = "0777";
+     //     if (!$dir){return false;}
  
-         if(!file_exists($dir)) {
-             return mkdir($dir,$mode,true);
-         } else {
-             return true;
-         }
-     }
+     //     if(!file_exists($dir)) {
+     //         return mkdir($dir,$mode,true);
+     //     } else {
+     //         return true;
+     //     }
+     // }
 
 ?>

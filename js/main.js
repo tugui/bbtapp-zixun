@@ -2,7 +2,7 @@
  * @Author: 伟强
  * @Date:   2016-05-27 10:02:24
  * @Last Modified by:   伟强
- * @Last Modified time: 2016-07-18 15:02:12
+ * @Last Modified time: 2016-08-02 20:28:45
  */
 
 'use strict';
@@ -20,7 +20,7 @@ $(function() {
     data: {},
 
     success: function(argument1,argument2,argument3) {
-      console.log(argument1);
+      // console.log(argument1);
       token = argument1;
     },
     error: function() {
@@ -73,11 +73,12 @@ $(function() {
           var domain = up.getOption('domain');
           var res = JSON.parse(info);
           retKey = res.key;
-          console.log('http://' + domain + '/' + res.key);
+          // console.log('http://' + domain + '/' + res.key);
           imgUrl = 'http://' + domain + '/' + res.key;
           var showPic = imgUrl + '?imageView2/0/w/200';
 
           $('#uploadDiv').append('<img src="' + showPic + '" alt="封面缩略图"/>');
+          alert('封面上传成功');
 
 
         },
@@ -98,9 +99,6 @@ $(function() {
         }
       }
     });
-   
-
-
 
   });
 
@@ -117,9 +115,24 @@ $(function() {
     }
   });
 
-  var d = new Date();
-  $('#showDay').html('当前日期:' + d.toLocaleDateString());
-  var nowDate = d.toLocaleDateString();
+  // var d = new Date();
+  // $('#showDay').html('当前日期:' + d.toLocaleDateString());
+  // var nowDate = d.toLocaleDateString();
+
+  var nowDate = "";
+  var today = new Date();
+  var yr = today.getFullYear();
+  var month = today.getMonth() + 1;
+  var day = today.getDate();
+
+  nowDate = nowDate + yr + '-' + month + '-' + day;
+  $('#showDay').html('当前日期:' + nowDate);
+
+  // console.log(typeof(nowDate));
+
+
+
+
   /*摘要字段*/
   // var abstractInput = UE.getEditor('abstract', {
   //   toolbars: [],
