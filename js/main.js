@@ -1,8 +1,8 @@
 /*
  * @Author: 伟强
  * @Date:   2016-05-27 10:02:24
- * @Last Modified by:   伟强
- * @Last Modified time: 2016-08-02 20:28:45
+ * @Last Modified by:   beiweiqiang
+ * @Last Modified time: 2016-09-07 07:44:27
  */
 
 'use strict';
